@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+
+    <!-- Occupation search -->
+    <ViewStub
+        android:id="@+id/stub_search"
+        android:inflatedId="@+id/panel_search"
+
+        android:layout="@layout/search_bar"
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top" />
+    
+    <!-- Occupation group selector -->
+    <TextView android:id="@+id/occupation_group_label"
+        android:text="Occupation Group:"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dip"
+        />
+    <Spinner android:id="@+id/occupation_group"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        />
+    <!-- Occupation selector -->
+    <TextView android:id="@+id/occupation_label" 
+        android:text="Occupation:"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dip"
+        />
+    <ListView android:id="@id/android:list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:drawSelectorOnTop="false" />
+
+    <ViewStub
+        android:id="@+id/stub_tooltip"
+        android:inflatedId="@+id/panel_tooltip"
+        android:layout="@layout/tooltip_overlay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="-62dip" />
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+    
+    <TextView android:id="@+id/location_area_name"
+        android:text="Area Name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_alignParentTop="true"
+        android:visibility="gone"
+        style="@style/DetailLabel" />
+
+    <TextView android:id="@+id/location_occupation_sort_order_label" 
+        android:text="Order top occupations by:"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_below="@id/location_area_name"
+        style="@style/HeadingLabel" />
+    
+    <Spinner android:id="@+id/location_occupation_sort_order_spinner"
+        android:entries="@array/sort_criteria"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/location_occupation_sort_order_label" />
+        
+    <ListView android:id="@id/android:list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:drawSelectorOnTop="false"
+        android:layout_below="@id/location_occupation_sort_order_spinner" />
+        
+</RelativeLayout>

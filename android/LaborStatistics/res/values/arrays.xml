@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="main">
+        <item>Know your occupation?</item>
+        <item>Know what industry you want to work in?</item>
+        <item>Know where you want to work?</item>
+        <item>Compare your salary</item>
+        <item>Tips</item>
+    </string-array>
+    
+    <string-array name="sort_criteria">
+        <item>Mean Annual Salary</item>
+        <item>Employment</item>
+    </string-array>
+    
+    <string-array name="top_items">
+        <item>Industry</item>
+        <item>State</item>
+        <item>City</item>
+    </string-array>
+    
+    <string-array name="tips">
+        <item>Using Occupational Employment Statistics data in your job search</item>
+        <item>Employment and Wages by Major Occupational Group and Industry</item>
+        <item>Using Occupational Employment Statistics data during wage and salary negotiations</item>
+    </string-array>
+</resources>

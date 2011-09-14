@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+    
+    <!-- Search/Filter bar -->
+    <include layout="@layout/search_bar" />
+    
+    <!-- Industry selector -->
+    <ListView android:id="@id/android:list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:drawSelectorOnTop="false" />
+
+    <ViewStub
+        android:id="@+id/stub_tooltip"
+        android:inflatedId="@+id/panel_tooltip"
+        android:layout="@layout/tooltip_overlay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="-51dip" />
+
+</LinearLayout>

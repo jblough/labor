@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+    
+    <TextView android:id="@+id/industry_name"
+        android:text="Industry Name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_alignParentTop="true"
+        android:visibility="gone"
+        style="@style/DetailLabel" />
+
+    <TextView  android:id="@+id/industry_occupation_sort_order_label"
+        android:text="Order top occupations by:"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_below="@id/industry_name"
+        style="@style/HeadingLabel" />
+    
+    <Spinner android:id="@+id/industry_occupation_sort_order_spinner"
+        android:entries="@array/sort_criteria"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/industry_occupation_sort_order_label" />
+
+    <!-- Would prefer to have included layout disclaimer_footer, but it works to inline it here -->
+    <TextView android:id="@+id/industry_occupation_footer"
+        android:text="@string/api_disclaimer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/FooterLabel"
+        android:paddingLeft="8dip"
+        android:paddingRight="8dip"
+        android:baselineAligned="false"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:background="#999" />
+        
+    <ListView android:id="@id/android:list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:drawSelectorOnTop="false"
+        android:layout_below="@id/industry_occupation_sort_order_spinner"
+        android:layout_above="@id/industry_occupation_footer" />
+        
+</RelativeLayout>

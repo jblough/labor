@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical"
+  android:background="#ffffff" >
+  
+  <ImageView android:id="@+id/documentation_header_image"
+    android:src="@drawable/occupation2"
+    android:layout_width="32sp"
+    android:layout_height="32sp"
+    android:padding="5dip"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true" />
+    
+  <TextView android:id="@+id/documentation_header" 
+    android:text="Know your occupation?"
+    android:gravity="left"
+    android:textSize="19sp"
+    android:textStyle="bold"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" 
+    android:layout_alignParentTop="true"
+    android:paddingLeft="5dip"
+    android:paddingBottom="5dip"
+    android:layout_toRightOf="@id/documentation_header_image" />
+      
+  <LinearLayout android:id="@+id/documentation_selector" 
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_alignParentBottom="true">
+    
+    <ToggleButton android:id="@+id/documentation_occupation_button"
+        android:text="Occupations" 
+        android:textOn="Occupations" 
+        android:textOff="Occupations" 
+        android:singleLine="true"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_weight="25" />
+    <ToggleButton android:id="@+id/documentation_industries_button"
+        android:text="Industries" 
+        android:textOn="Industries" 
+        android:textOff="Industries" 
+        android:singleLine="true"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_weight="25" />
+    <ToggleButton android:id="@+id/documentation_locations_button"
+        android:text="Locations" 
+        android:textOn="Locations" 
+        android:textOff="Locations" 
+        android:singleLine="true"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_weight="25" />
+    <ToggleButton android:id="@+id/documentation_compare_button"
+        android:text="Compare" 
+        android:textOn="Compare" 
+        android:textOff="Compare" 
+        android:singleLine="true"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_weight="25" />
+    </LinearLayout>
+    
+  <WebView
+    android:id="@+id/documentation_webview" 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_above="@id/documentation_selector"
+    android:layout_below="@id/documentation_header" />
+  
+  
+</RelativeLayout>

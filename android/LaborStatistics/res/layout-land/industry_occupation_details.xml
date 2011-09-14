@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+
+<ScrollView android:id="@+id/industry_occupation_details_content"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+
+<LinearLayout
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+    
+    <TextView android:id="@+id/occupation_name"
+        android:text="Name:"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        style="@style/HeadingLabel" />
+    
+    <TextView android:id="@+id/occupation_description"
+        android:text="Description:"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        style="@style/DetailLabel" />
+
+    <!-- Data types: employment, - 01
+                        employment percent relative standard error, - 02
+                        hourly mean wage, - 03
+                        annual mean wage, - 04
+                        wage percent relative standard error, - 05
+                        hourly 10th percentile wage, - 06
+                        hourly 25th percentile wage, - 07
+                        hourly median wage, - 08
+                        hourly 75th percentile wage, - 09
+                        hourly 90th percentile wage, - 10
+                        annual 10th percentile wage, - 11
+                        annual 25th percentile wage, - 12
+                        annual median wage, - 13
+                        annual 75th percentile wage, - 14
+                        annual 90th percentile wage - 15 -->
+
+    <!-- National statistics -->
+    <LinearLayout android:id="@+id/national_stats_heading"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        
+        <TextView android:id="@+id/national_stats_header_label"
+            android:text="National Statistics:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            style="@style/HeadingLabel" />
+        <ProgressBar android:id="@+id/national_stats_busy_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.ProgressBar.Small.Inverse"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:indeterminate="true" />
+    </LinearLayout>
+    
+    <TableLayout android:id="@+id/national_occupation_stats"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        
+        <TableRow>
+           <TextView android:text="Employment:"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailLabel"
+               />
+           <TextView android:id="@+id/national_occupation_employment"
+                android:text="1000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailValue"
+               />
+        </TableRow>
+        <TableRow>
+           <TextView android:text="Median Hourly Wage:"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailLabel"
+               />
+           <TextView android:id="@+id/national_occupation_median_wage"
+                android:text="1000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailValue"
+               />
+        </TableRow>
+        <TableRow>
+           <TextView android:text="Mean Hourly Wage:"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailLabel"
+               />
+           <TextView android:id="@+id/national_occupation_mean_wage"
+                android:text="1000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailValue"
+               />
+        </TableRow>
+        <TableRow>
+           <TextView android:text="Median Annual Salary:"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailLabel"
+               />
+           <TextView android:id="@+id/national_occupation_median_salary"
+                android:text="1000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailValue"
+               />
+        </TableRow>
+        <TableRow>
+           <TextView android:text="Mean Annual Salary:"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailLabel"
+               />
+           <TextView android:id="@+id/national_occupation_mean_salary"
+                android:text="1000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailValue"
+               />
+        </TableRow>
+    </TableLayout>    
+
+    <TextView android:id="@+id/regional_stats_available_label"
+        android:text="Select a state and optionally municipality on the Map tab to see regional statistics"
+        android:visibility="gone"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ddd"
+        style="@style/HeadingLabel" />
+        
+    <!-- State statistics -->
+    <LinearLayout android:id="@+id/state_stats_heading"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:paddingTop="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        
+        <TextView android:id="@+id/state_stats_header_label"
+            android:text="State Statistics:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            style="@style/HeadingLabel" />
+        <ProgressBar android:id="@+id/state_stats_busy_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.ProgressBar.Small.Inverse"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:indeterminate="true" />
+    </LinearLayout>
+    
+    <TextView android:id="@+id/state_stats_no_data_available_label"
+        android:text="No data available"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/DetailLabel" />
+    
+    <TableLayout android:id="@+id/state_occupation_stats"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        
+        <TableRow>
+           <TextView android:text="Employment:"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailLabel"
+               />
+           <TextView android:id="@+id/state_occupation_employment"
+                android:text="1000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailValue"
+               />
+        </TableRow>
+        <TableRow>
+           <TextView android:text="Median Hourly Wage:"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailLabel"
+               />
+           <TextView android:id="@+id/state_occupation_median_wage"
+                android:text="1000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailValue"
+               />
+        </TableRow>
+        <TableRow>
+           <TextView android:text="Mean Hourly Wage:"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailLabel"
+               />
+           <TextView android:id="@+id/state_occupation_mean_wage"
+                android:text="1000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailValue"
+               />
+        </TableRow>
+        <TableRow>
+           <TextView android:text="Median Annual Salary:"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailLabel"
+               />
+           <TextView android:id="@+id/state_occupation_median_salary"
+                android:text="1000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailValue"
+               />
+        </TableRow>
+        <TableRow>
+           <TextView android:text="Mean Annual Salary:"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailLabel"
+               />
+           <TextView android:id="@+id/state_occupation_mean_salary"
+                android:text="1000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailValue"
+               />
+        </TableRow>
+    </TableLayout>    
+        
+
+    <!-- Municipal statistics -->
+    <LinearLayout android:id="@+id/municipality_stats_heading"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:paddingTop="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        
+        <TextView android:id="@+id/municipality_stats_header_label"
+            android:text="Municipal Statistics:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            style="@style/HeadingLabel" />
+        <ProgressBar android:id="@+id/municipality_stats_busy_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.ProgressBar.Small.Inverse"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:indeterminate="true" />
+    </LinearLayout>
+    
+    <TextView android:id="@+id/municipality_stats_no_data_available_label"
+        android:text="No data available"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/DetailLabel" />
+    
+    <TableLayout android:id="@+id/municipality_occupation_stats"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        
+        <TableRow>
+           <TextView android:text="Employment:"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailLabel"
+               />
+           <TextView android:id="@+id/municipality_occupation_employment"
+                android:text="1000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailValue"
+               />
+        </TableRow>
+        <TableRow>
+           <TextView android:text="Median Hourly Wage:"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailLabel"
+               />
+           <TextView android:id="@+id/municipality_occupation_median_wage"
+                android:text="1000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailValue"
+               />
+        </TableRow>
+        <TableRow>
+           <TextView android:text="Mean Hourly Wage:"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailLabel"
+               />
+           <TextView android:id="@+id/municipality_occupation_mean_wage"
+                android:text="1000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailValue"
+               />
+        </TableRow>
+        <TableRow>
+           <TextView android:text="Median Annual Salary:"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailLabel"
+               />
+           <TextView android:id="@+id/municipality_occupation_median_salary"
+                android:text="1000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailValue"
+               />
+        </TableRow>
+        <TableRow>
+           <TextView android:text="Mean Annual Salary:"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailLabel"
+               />
+           <TextView android:id="@+id/municipality_occupation_mean_salary"
+                android:text="1000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                style="@style/DetailValue"
+               />
+        </TableRow>
+    </TableLayout>
+        
+</LinearLayout>
+</ScrollView>
+
+    <ViewStub
+        android:id="@+id/stub_tooltip"
+        android:inflatedId="@+id/panel_tooltip"
+        android:layout="@layout/tooltip_overlay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-51dip" />
+        
+</RelativeLayout>

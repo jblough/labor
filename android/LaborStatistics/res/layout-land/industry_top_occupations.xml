@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+    
+    <TextView android:id="@+id/industry_name"
+        android:text="Industry Name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_alignParentTop="true"
+        android:visibility="gone"
+        android:paddingBottom="0dp"
+        style="@style/DetailLabel" />
+
+    <TextView  android:id="@+id/industry_occupation_sort_order_label"
+        android:text="Order top occupations by:"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_below="@id/industry_name"
+        style="@style/HeadingLabel" />
+    
+    <Spinner android:id="@+id/industry_occupation_sort_order_spinner"
+        android:entries="@array/sort_criteria"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/industry_occupation_sort_order_label" />
+
+    <ListView android:id="@id/android:list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:drawSelectorOnTop="false"
+        android:layout_below="@id/industry_occupation_sort_order_spinner" />
+        
+</RelativeLayout>

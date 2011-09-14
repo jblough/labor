@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+    
+    <TextView android:id="@+id/comparison_row_industry_value"
+        android:text="$1,000,000.00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/top_50_item_row_label"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" />
+        
+    <TextView android:id="@+id/comparison_row_industry_name"
+        android:text="Commercial and Industrial Machinery Equipment (except Auto and Electronic) Repair and Maintenance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/top_50_item_row_label"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/comparison_row_industry_value"
+        android:layout_centerVertical="true" />
+        
+</RelativeLayout>

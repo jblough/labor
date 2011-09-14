@@ -1,0 +1,24 @@
+# Gathering the data set files
+1) Download the data sets from ftp://ftp.bls.gov/pub/time.series/oe/
+2) Download the occupation definitions spreadsheet from http://www.bls.gov/oes/current/occupation_definitions_m2010.xls
+3) Export the spreadsheet as a comma-separated file named "occupation_definitions.csv"
+4) If needed, fix the issue of duplicate double-quotes in occupation_definitions.csv
+
+# Creating the SQLite databases
+5) Run convert_to_database.py to create the SQLite database data.db
+6) Add the state map coordinates to the database with the command "sqlite data.db < state_coordinates.sql"
+7) Add the municipality map coordinates to the database with the command "sqlite data.db < city_coordinates.sql"
+8) Split the database up into Android sized chunks with the command "split -b 900000 data.db" (split should be available on Linux/OSX/Cygwin)
+9) Copy the split up database (xaa, xab, xac) into the Android projects/res/raw directory with the names data2010a, data2010b, data2010c
+10) Run convert_data.py to create the SQLite database just_data.db (~250 MB)
+11) Run convert_series.py to create the SQLite database just_series.db (~400 MB)
+
+# Creating the PostgreSQL database
+12) Upload data.db, just_series.db, and just_data.db SQLite databases to where the script will be run from
+13) Run database_schema.sql to create the database tables in the PostgreSQL database
+14) Update the $host, $user, $pass, $database and the locations of the SQLite databases in populate_db.php
+15) Run populate_db.php to import the data from the SQLite databases into the PostgreSQL database *
+
+
+* The import of the data and series tables will probably take a long time (measured in hours).  Because of the unique constraints on the 
+   PostgreSQL table schemas the script should be re-runnable, but you probably want to pipe errors to a file.

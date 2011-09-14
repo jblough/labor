@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+
+    android:paddingLeft="10dip"
+    android:paddingTop="5dip"
+    android:paddingRight="10dip"
+    android:paddingBottom="8dip"
+    
+    android:background="#000000" >
+
+    <TextView android:id="@+id/tooltip_overlay_text"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:gravity="center"
+     android:textColor="#FFFFFF" />
+         
+</LinearLayout>

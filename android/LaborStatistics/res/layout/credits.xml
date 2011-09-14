@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:layout_gravity="center"
+  android:background="@drawable/starfield_repeat">
+  
+<LinearLayout
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:gravity="center">
+  
+  <LinearLayout android:orientation="vertical" 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="10dip">
+    <TextView android:text="Programmer:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textStyle="bold" />
+    <TextView android:text="Joseph Blough"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+  </LinearLayout>
+
+  
+  <LinearLayout android:orientation="vertical" 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="10dip">
+    <TextView android:text="User Interface Consultant:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textStyle="bold" />
+    <TextView android:text="Spike Hains"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+  </LinearLayout>
+    
+  <LinearLayout android:orientation="vertical" 
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:gravity="center"
+  android:padding="10dip">
+  <TextView android:text="Data provided by:"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textStyle="bold" />
+  <TextView android:text="United States Department of Labor"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+  <TextView android:text="Bureau of Labor Statistics"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+  <TextView android:text="http://www.bls.gov/oes/"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:autoLink="web"
+    android:linksClickable="true" />
+</LinearLayout>
+
+  <LinearLayout android:orientation="vertical" 
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:gravity="center"
+  android:padding="10dip">
+  <TextView android:text="Graphics:" 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textStyle="bold" />
+  <TextView android:text="http://www.openclipart.org"
+    android:autoLink="web"
+    android:linksClickable="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+  <TextView android:text="Android Asset Studio"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+  <TextView android:text="http://j.mp/androidassetstudio"
+    android:autoLink="web"
+    android:linksClickable="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+</LinearLayout>
+
+  <LinearLayout android:orientation="vertical" 
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:gravity="center"
+  android:padding="10dip">
+  <TextView android:text="Graphing Library:" 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textStyle="bold" />
+  <TextView android:text="AndroidPlot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+  <TextView android:text="http://androidplot.com/"
+    android:autoLink="web"
+    android:linksClickable="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+  </LinearLayout>
+
+  <LinearLayout android:orientation="vertical" 
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:gravity="center"
+  android:padding="10dip">
+  <TextView android:text="PDF Rendering Library:" 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textStyle="bold" />
+  <TextView android:text="Android PDF Viewer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+  <TextView android:text="http://andpdf.sf.net/"
+    android:autoLink="web"
+    android:linksClickable="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+  </LinearLayout>
+
+  <LinearLayout android:orientation="vertical" 
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:gravity="center"
+  android:padding="10dip">
+  <TextView android:text="MapView Balloons:" 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textStyle="bold" />
+  <TextView android:text="Jeff Gilfelt"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+  <TextView android:text="https://github.com/jgilfelt/android-mapviewballoons"
+    android:autoLink="web"
+    android:linksClickable="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal" />
+  </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

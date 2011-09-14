@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+    
+    <TextView android:id="@+id/occupation_name_top_employment_label"
+        android:text="Occupation"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        style="@style/DetailLabel" />
+
+    <TextView android:text="Display highest employment by:"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        style="@style/HeadingLabel" />
+    
+    <Spinner android:id="@+id/occupation_top_employment_items_spinner"
+        android:entries="@array/top_items"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+        
+    <ListView android:id="@id/android:list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:drawSelectorOnTop="false" />
+        
+</LinearLayout>
