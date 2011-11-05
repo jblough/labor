@@ -700,6 +700,6 @@ public class DataLibrary {
 		db.close();
 	}
 
-	return getMunicipalityAreaCode(context, closestCity);
+	return (closestCity == null) ? null : getMunicipalityAreaCode(context, closestCity);
     }
 }
